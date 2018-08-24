@@ -10,19 +10,21 @@ class CommentBox extends Component {
 
   handleSubmitForm = event => {
     event.preventDefault();
-    debugger
     this.props.saveComment(this.state.comment)
     this.setState({comment: ''});
   }
   render(){
     return(
-      <form onSubmit={this.handleSubmitForm.bind(this)}>
-        <h4> Add comment </h4>
-        <textarea onChange={this.handleChange.bind(this)} value={this.state.comment} />
-        <div>
-          <button>Submit comment </button>
-        </div>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmitForm.bind(this)}>
+          <h4> Add comment </h4>
+          <textarea onChange={this.handleChange.bind(this)} value={this.state.comment} />
+          <div>
+            <button>Submit comment </button>
+          </div>
+        </form>
+        <button className='fetch-comments' onClick={this.props.fetchComments}>Fetch comments</button>
+      </div>
     );
   }
 }

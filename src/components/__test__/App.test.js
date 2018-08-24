@@ -6,7 +6,7 @@ import CommentList from '../CommentList';
 import App from '../App';
 
 let wrapped;
-beforeEach(()=>{
+beforeEach(() => {
   wrapped = shallow(<App />);
 });
 
@@ -14,6 +14,6 @@ it('show a comment box', () => {
   expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 
-it('show a comment list', ()=>{
+it('show a comment list', () => {
   expect(wrapped.find(CommentList).length).toEqual(1);
 });
